@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="93689" started-at="2020-12-09T06:45:12Z" finished-at="2020-12-09T06:46:46Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="93689" started-at="2020-12-09T06:45:12Z" finished-at="2020-12-09T06:46:46Z">
+      <class name="tests.SampleTest">
+        <test-method status="PASS" signature="beforeTestMethod()[pri:0, instance:tests.SampleTest@cb644e]" name="beforeTestMethod" is-config="true" duration-ms="618" started-at="2020-12-09T12:15:12Z" finished-at="2020-12-09T12:15:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@cb644e]" name="setUp" is-config="true" duration-ms="18820" started-at="2020-12-09T12:15:13Z" finished-at="2020-12-09T12:15:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.SampleTest.demoTest() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="demoTest()[pri:0, instance:tests.SampleTest@cb644e]" name="demoTest" duration-ms="70882" started-at="2020-12-09T12:15:32Z" finished-at="2020-12-09T12:16:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- demoTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SampleTest@cb644e]" name="tearDown" is-config="true" duration-ms="1083" started-at="2020-12-09T12:16:44Z" finished-at="2020-12-09T12:16:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=demoTest status=SUCCESS method=SampleTest.demoTest()[pri:0, instance:tests.SampleTest@cb644e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="afterTestMethod()[pri:0, instance:tests.SampleTest@cb644e]" name="afterTestMethod" is-config="true" duration-ms="719" started-at="2020-12-09T12:16:45Z" finished-at="2020-12-09T12:16:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestMethod -->
+      </class> <!-- tests.SampleTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
