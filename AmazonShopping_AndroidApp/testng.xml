@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="utils.SuiteListener"></listener>
 	</listeners>
-	<test name="Test">
+	<test name="AmazonAppTest">
 		<classes>
 			<class name="tests.SampleTest" />
 		</classes>

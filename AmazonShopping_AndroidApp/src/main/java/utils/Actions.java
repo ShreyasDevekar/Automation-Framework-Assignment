@@ -1,13 +1,21 @@
 package utils;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.MediaEntityModelProvider;
 
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -21,8 +29,10 @@ public class Actions extends FetchElement
 {
 	Properties prop = new Properties();
 	WebDriverWait wait;
+	public static int i=1;
 	
 	/* Description: This method waits until the element is enabled for clicking. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 */
@@ -31,7 +41,7 @@ public class Actions extends FetchElement
 	{
 		try
 		{
-			wait=new WebDriverWait(BaseTest.driver, 80);
+			wait=new WebDriverWait(BaseTest.driver, 30);
 			wait.until(ExpectedConditions.elementToBeClickable(getBySelector(locatorType, locatorValue)));
 		}
 		catch(Exception e)
@@ -45,6 +55,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method waits until the element is visible. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 */
@@ -53,7 +64,7 @@ public class Actions extends FetchElement
 	{
 		try
 		{
-			wait=new WebDriverWait(BaseTest.driver, 80);
+			wait=new WebDriverWait(BaseTest.driver, 30);
 			wait.until(ExpectedConditions.presenceOfElementLocated(getBySelector(locatorType, locatorValue)));
 		}
 		catch(Exception e)
@@ -67,6 +78,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method sends the string input to text field. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 *              value - input value.
@@ -91,6 +103,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method fetches the element text. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 */
@@ -114,6 +127,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method validates that the one string contains another string or not. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : str1 - 1st string value
 	 *              str2 - 2nd string value.
 	 */
@@ -122,22 +136,29 @@ public class Actions extends FetchElement
 	{
 		if(str1.contains(str2))
 		{
+			Assert.assertTrue(true);
 			return true;
 		}
 		else
 		{
-			return false;
+			Assert.assertTrue(false);
+			
 		}
+		return false;
 	}
 	
-	// Description: This method presses enter key on android.
+	/* Description: This method presses enter key on android.
+	 * Created By: Shreyas Devekar
+	 */
 	
 	public void pressEnter()
 	{
 		BaseTest.driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 	}
 	
-	// Description: This methods scrolls down the screen till last element.
+	/* Description: This methods scrolls down the screen till last element.
+	 * Created By: Shreyas Devekar
+	 */
 	
 	public static void scrollDown()
 	{
@@ -149,6 +170,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method scrolls the screen till the required element is visible on screen. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 */
@@ -156,16 +178,19 @@ public class Actions extends FetchElement
 	public void scrollTillElementVisible(String locatorType, String locatorValue)
 	{
 		boolean status = isElementPresent(locatorType, locatorValue);
-		while(!status)
+		int count = 0;
+		while(!status && count<6)
 		{
 			scrollDown();
 			status = isElementPresent(locatorType, locatorValue);
+			count++;
 			
 		}
 		
 	}
 	
 	/* Description: This method scrolls screen till element is visible and clicks on it. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 */
@@ -177,6 +202,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method scroll till the input text is found and clicks on it.
+	 * Created By: Shreyas Devekar
 	 * Parameters : visibleText - text to be search.
 	 */
 
@@ -196,6 +222,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method returns true or false based on element is present or not. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 */
@@ -221,6 +248,7 @@ public class Actions extends FetchElement
 	}
 	
 	/* Description: This method performs click operation. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : locatorType - locator type of element.
 	 *              locatorValue - locator value of element.
 	 */
@@ -241,14 +269,18 @@ public class Actions extends FetchElement
 		}	
 	}
 	
-	// Description: This method performs navigate to back action.
+	/* Description: This method performs navigate to back action.
+	 * Created By: Shreyas Devekar
+	 */
 	
 	public void clickBackButton() 
 	{
 		BaseTest.driver.navigate().back(); 
 	}
 	
-	// Description: This method returns current rotation of screen.
+	/* Description: This method returns current rotation of screen.
+	 * Created By: Shreyas Devekar
+	 */
 	
 	public ScreenOrientation GetCurrentRotation()
     {
@@ -256,20 +288,56 @@ public class Actions extends FetchElement
         return currentRotation;
     }
 	
-	// Description: This method sets rotation to portrait.
+	/* Description: This method sets rotation to portrait.
+	 * Created By: Shreyas Devekar
+	 */
 	
 	public void SetRotationPortrait()
     {
         BaseTest.driver.rotate(ScreenOrientation.PORTRAIT);
     }
 	
-	// Description: This method sets rotation to landscape.
+	/* Description: This method sets rotation to landscape.
+	 * Created By: Shreyas Devekar
+	 */
 
 	public void SetRotationLandscape()
 	{
 
 		BaseTest.driver.rotate(ScreenOrientation.LANDSCAPE);
 	}
-
+	
+	/* Description: This method Captures Screenshot. 
+	 * Created By: Shreyas Devekar
+	 * Parameters : filePath - Destination file path for captured screenshot.
+	 */
+	
+	public String captureScreenShot(String filePath)
+	{
+		File f = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
+		try 
+		{
+			FileUtils.copyFile(f,new File(filePath));
+			return filePath;
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+	
+	/* Description: This method returns media (image) from captured screenshot. 
+	 * Created By: Shreyas Devekar
+	 */
+	
+	public MediaEntityModelProvider putScreenshot() throws IOException
+	{
+		String imageName = "Screenshot_"+String.valueOf(Actions.i);
+		MediaEntityModelProvider media =  MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(Constants.testEventSnips+imageName+".png")).build();
+		Actions.i++;
+		return media;
+	}
 
 }

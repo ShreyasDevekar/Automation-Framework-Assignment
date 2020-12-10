@@ -27,19 +27,37 @@ public class BaseTest extends Utility
 	public DesiredCapabilities cap;
 	Properties prop;
 	ReportGeneration report = new ReportGeneration();
+	public static String deviceName;
+	public static String  platformName;
+	public static String appActivity;
+	public static String appPackage;
 	
-	// Description: This method initializes android driver with android device capabilities 
+	/* Description: This method loads all capabilities from capability.properties file.
+	 * Created By: Shreyas Devekar 
+	 */
+	
+	public void capabilities()
+	{
+		prop = LoadProperties(Constants.capabilityPath);
+		deviceName = prop.getProperty("deviceName");
+		platformName = prop.getProperty("platformName");
+		appActivity = prop.getProperty("appActivity");
+		appPackage = prop.getProperty("appPackage");
+	}
+	
+	/* Description: This method initializes android driver with android device capabilities
+	 * Created By: Shreyas Devekar 
+	 */
 	
 	public void setUpDriver()
 	{
 		cap = new DesiredCapabilities();
-		prop = new Properties();
 		prop = LoadProperties(Constants.capabilityPath);
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("deviceName"));
-		cap.setCapability("platformName", prop.getProperty("platformName"));
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
+		cap.setCapability("platformName", platformName);
 		cap.setCapability("app", Constants.applicationFilePath);
-		cap.setCapability("appActivity", prop.getProperty("appActivity"));
-		cap.setCapability("appPackage", prop.getProperty("appPackage"));
+		cap.setCapability("appActivity", appActivity );
+		cap.setCapability("appPackage", appPackage);
 		try 
 		{
 			driver=new AndroidDriver<AndroidElement>(new URL(prop.getProperty("Url")),cap);
@@ -50,7 +68,9 @@ public class BaseTest extends Utility
 		}
 	}
 	
-	// Description: This method calls initializeReport to initialize the report. 
+	/* Description: This method calls initializeReport to initialize the report.
+	 * Created By: Shreyas Devekar 
+	 */
 	
 	@BeforeTest
 	public void beforeTestMethod()
@@ -58,7 +78,8 @@ public class BaseTest extends Utility
 		report.initializeReports();
 	}
 	
-	/* Description: This method calls createTestLogger to create test logs and starts driver with capabilities. 
+	/* Description: This method calls createTestLogger to create test logs and starts driver with capabilities.
+	 * Created By: Shreyas Devekar 
 	 * Parameters : test method   
 	 */
 	
@@ -69,18 +90,21 @@ public class BaseTest extends Utility
 		setUpDriver();
 	}
 	
-	/* Description: This method calls getTestResultReport to generate test execution result report. 
+	/* Description: This method calls getTestResultReport to generate test execution result report.
+	 * Created By: Shreyas Devekar 
 	 * Parameters : test result   
 	 */
 	
 	@AfterMethod
-	public void tearDown(ITestResult result)
+	public void tearDown(ITestResult result) throws IOException
 	{
 		report.getTestResultReport(result);
 		driver.quit();
 	}
 	
-	// Description: This method calls writeTestLog method to write test log in reports. 
+	/* Description: This method calls writeTestLog method to write test log in reports.
+	 * Created By: Shreyas Devekar 
+	 */
 	
 	@AfterTest
 	public void afterTestMethod()

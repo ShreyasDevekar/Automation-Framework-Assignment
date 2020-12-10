@@ -10,5 +10,9 @@ public interface Constants
     String applicationFilePath = System.getProperty("user.dir")+File.separator+"Resources"+File.separator+"applicationFile"+File.separator+"Amazon_shopping.apk";
     String reportPath = System.getProperty("user.dir")+File.separator+"Reports"+File.separator+"Automation_Report.html";
     String testDataFilePath = System.getProperty("user.dir")+File.separator+"Resources"+File.separator+"testData"+File.separator+"Datasheet.xlsx";
+    String passTestSnipsPath = System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+"PassTestSnips"+File.separator;
+    String failTestSnipsPath = System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+"FailedTestSnips"+File.separator;
+    String testEventSnips = System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+"TestEventSnips"+File.separator;
     String sheetName = "Sheet1";
+    
 }

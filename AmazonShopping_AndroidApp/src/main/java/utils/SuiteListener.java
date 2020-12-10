@@ -12,7 +12,7 @@ import org.testng.ITestResult;
 
 import tests.BaseTest;
 
-public class SuiteListener implements ITestListener 
+public class SuiteListener extends  Utility implements ITestListener 
 {
 
 	public void onTestStart(ITestResult result) {
@@ -21,40 +21,24 @@ public class SuiteListener implements ITestListener
 	}
 	
 	/* Description: This method takes screenshot if test result is pass. 
+	 * Created By: Shreyas Devekar
 	 * Parameters : result - test result
 	 */
 
 	public void onTestSuccess(ITestResult result) {
 	
-		String filePath = System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+"PassTestSnips"+File.separator+result.getMethod().getMethodName();
-		File f = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-		try 
-		{
-			FileUtils.copyFile(f,new File(filePath+".png"));
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
+		//captureScreenShot(Constants.passTestSnipsPath+File.separator+result.getMethod().getMethodName());
 		
 	}
 	
-	/* Description: This method takes screenshot if test result is fail. 
+	/* Description: This method takes screenshot if test result is fail.
+	 * Created By: Shreyas Devekar 
 	 * Parameters : result - test result
 	 */
 
 	public void onTestFailure(ITestResult result) 
 	{
-		String filePath = System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+"FailedTestSnips"+File.separator+result.getMethod().getMethodName();
-		File f = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-		try 
-		{
-			FileUtils.copyFile(f,new File(filePath+".png"));
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
+		//captureScreenShot(Constants.failTestSnipsPath+File.separator+result.getMethod().getMethodName());
 	}
 
 	public void onTestSkipped(ITestResult result) {
