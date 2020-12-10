@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="94153" started-at="2020-12-10T13:31:28Z" finished-at="2020-12-10T13:33:02Z">
+  <suite name="Suite" duration-ms="95109" started-at="2020-12-10T13:46:08Z" finished-at="2020-12-10T13:47:43Z">
     <groups>
     </groups>
-    <test name="AmazonAppTest" duration-ms="94153" started-at="2020-12-10T13:31:28Z" finished-at="2020-12-10T13:33:02Z">
+    <test name="AmazonAppTest" duration-ms="95109" started-at="2020-12-10T13:46:08Z" finished-at="2020-12-10T13:47:43Z">
       <class name="tests.SampleTest">
-        <test-method status="PASS" signature="beforeTestMethod()[pri:0, instance:tests.SampleTest@1ed4004b]" name="beforeTestMethod" is-config="true" duration-ms="254" started-at="2020-12-10T19:01:28Z" finished-at="2020-12-10T19:01:29Z">
+        <test-method status="PASS" signature="beforeTestMethod()[pri:0, instance:tests.SampleTest@1ed4004b]" name="beforeTestMethod" is-config="true" duration-ms="303" started-at="2020-12-10T19:16:08Z" finished-at="2020-12-10T19:16:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@1ed4004b]" name="setUp" is-config="true" duration-ms="17162" started-at="2020-12-10T19:01:29Z" finished-at="2020-12-10T19:01:46Z">
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@1ed4004b]" name="setUp" is-config="true" duration-ms="14890" started-at="2020-12-10T19:16:08Z" finished-at="2020-12-10T19:16:23Z">
           <params>
             <param index="0">
               <value>
@@ -22,11 +22,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="ValidatingCartProductDetails()[pri:0, instance:tests.SampleTest@1ed4004b]" name="ValidatingCartProductDetails" duration-ms="74369" started-at="2020-12-10T19:01:46Z" finished-at="2020-12-10T19:03:00Z">
+        <test-method status="PASS" signature="ValidatingCartProductDetails()[pri:0, instance:tests.SampleTest@1ed4004b]" name="ValidatingCartProductDetails" duration-ms="77214" started-at="2020-12-10T19:16:23Z" finished-at="2020-12-10T19:17:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidatingCartProductDetails -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SampleTest@1ed4004b]" name="tearDown" is-config="true" duration-ms="2036" started-at="2020-12-10T19:03:00Z" finished-at="2020-12-10T19:03:02Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SampleTest@1ed4004b]" name="tearDown" is-config="true" duration-ms="2241" started-at="2020-12-10T19:17:40Z" finished-at="2020-12-10T19:17:42Z">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="afterTestMethod()[pri:0, instance:tests.SampleTest@1ed4004b]" name="afterTestMethod" is-config="true" duration-ms="313" started-at="2020-12-10T19:03:02Z" finished-at="2020-12-10T19:03:02Z">
+        <test-method status="PASS" signature="afterTestMethod()[pri:0, instance:tests.SampleTest@1ed4004b]" name="afterTestMethod" is-config="true" duration-ms="449" started-at="2020-12-10T19:17:42Z" finished-at="2020-12-10T19:17:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
