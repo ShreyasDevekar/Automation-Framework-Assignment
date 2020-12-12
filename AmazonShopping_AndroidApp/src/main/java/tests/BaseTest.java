@@ -32,7 +32,6 @@ public class BaseTest extends Actions
 	public static String  platformName;
 	public static String appActivity;
 	public static String appPackage;
-	public static String url;
 	
 	/* Description: This method loads all capabilities from capability.properties file.
 	 * Created By: Shreyas Devekar 
@@ -45,7 +44,6 @@ public class BaseTest extends Actions
 		platformName = prop.getProperty("platformName");
 		appActivity = prop.getProperty("appActivity");
 		appPackage = prop.getProperty("appPackage");
-		url = prop.getProperty("Url");
 	}
 	
 	/* Description: This method initializes android driver with android device capabilities
