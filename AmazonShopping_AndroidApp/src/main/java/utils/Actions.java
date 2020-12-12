@@ -1,9 +1,11 @@
 package utils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
@@ -16,6 +18,7 @@ import org.testng.Assert;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.MediaEntityModelProvider;
+import com.aventstack.extentreports.Status;
 
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -315,29 +318,83 @@ public class Actions extends FetchElement
 	public String captureScreenShot(String filePath)
 	{
 		File f = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
+		String destinationPath = filePath;
 		try 
 		{
 			FileUtils.copyFile(f,new File(filePath));
-			return filePath;
+			return destinationPath;
 		} 
 		catch (IOException e) 
 		{
 			e.printStackTrace();
 		}
-		return null;
+		return destinationPath;
 		
 	}
 	
-	/* Description: This method returns media (image) from captured screenshot. 
-	 * Created By: Shreyas Devekar
+	/* Description: This method attaches screenshot to that event log.
+	 * Created By: Shreyas Devekar 
+	 * Parameters : info - information of particular event.
 	 */
 	
-	public MediaEntityModelProvider putScreenshot() throws IOException
+	public void attachScreenshots(String info) 
 	{
-		String imageName = "Screenshot_"+String.valueOf(Actions.i);
-		MediaEntityModelProvider media =  MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(Constants.testEventSnips+imageName+".png")).build();
+		String imageName = "Screenshot"+String.valueOf(Actions.i);
+		MediaEntityModelProvider media = null;
+		try 
+		{
+			media = MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(Constants.testEventSnips+imageName+".png")).build();
+			ReportGeneration.logger.log(Status.INFO,info, media);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
 		Actions.i++;
-		return media;
+	}
+	
+	/* Description: This method loads the property file. 
+	 * Created By: Shreyas Devekar
+	 * Parameters : propertyFilePath - property file path
+	 */
+	
+	public Properties LoadProperties(String propertyFilePath) 
+	{
+		Properties prop = new Properties();
+		try
+		{
+			FileInputStream inputFile = new FileInputStream(propertyFilePath);
+			prop.load(inputFile);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+			Assert.assertTrue(false);
+		}
+		return prop;
+	}
+	
+	/* Description: This method generates random value and passes to the element.
+	 * Created By: Shreyas Devekar 
+	 * Parameters : locatorType - locator type of element.
+	 *              locatorValue - locator value of element.
+	 */
+	
+	public void getRandomValue(String locatorType, String locatorValue)
+	{
+		try 
+		{
+			Random random = new Random();
+			int randomValue = random.nextInt(getElements(locatorType, locatorValue).size());
+			getElements(locatorType, locatorValue).get(randomValue).click();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			ReportGeneration.logger.info("Unable to select random value");
+			Assert.assertTrue(false);
+		}
+		
 	}
 
 }

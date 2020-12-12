@@ -1,16 +1,9 @@
 package pageEvents;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.StringTokenizer;
-
-import org.testng.Assert;
-
-import com.aventstack.extentreports.Status;
 
 import pageObjects.CartPageElements;
 import utils.Actions;
-import utils.Constants;
 import utils.ReportGeneration;
 
 public class CartPageEvents extends Actions
@@ -18,10 +11,11 @@ public class CartPageEvents extends Actions
 	/* Description : This method returns the details of product present in cart.
 	 * Created By: Shreyas Devekar
 	 */
-	public String getCartProductDetails() throws IOException
+	
+	public String getCartProductDetails() 
 	{
 		String cartProductDetails = getElementText("xpath",CartPageElements.productDescriptionInCart);
-		ReportGeneration.logger.log(Status.INFO,"Fetching product details present in a cart", putScreenshot());
+		attachScreenshots("Fetching product details present in a cart");
 		return cartProductDetails;
 	}
 	
@@ -31,10 +25,10 @@ public class CartPageEvents extends Actions
 	 *              cartProductDetails - details of product present in cart.
 	 */
 	
-	public void compareProductDetails(String selectedProductDetails,String cartProductDetails) throws IOException
+	public void compareProductDetails(String selectedProductDetails,String cartProductDetails) 
 	{
 		StringTokenizer st=new StringTokenizer(cartProductDetails, "...");
-		ReportGeneration.logger.log(Status.INFO,"Validating the selected product and cart product for checkout is same", putScreenshot());
+		attachScreenshots("Validating the selected product and cart product for checkout is same");
 		if(selectedProductDetails.contains(st.nextToken()))
 		{
 			ReportGeneration.logger.info("The product Details are matched");

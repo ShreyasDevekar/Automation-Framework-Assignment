@@ -1,22 +1,17 @@
 package pageEvents;
 
-import java.io.IOException;
-
-import com.aventstack.extentreports.Status;
-
 import pageObjects.SignInOptionPageElements;
 import utils.Actions;
-import utils.ReportGeneration;
 
 public class SignInOptionPageEvents extends Actions
-{
+{	
 	/* Description: This method clicks on sign in button.
 	 * Created By: Shreyas Devekar
 	 */
 	
-	public void clickOnSignIn() throws IOException, InterruptedException
+	public void clickOnSignIn() 
 	{
-		ReportGeneration.logger.log(Status.INFO,"Clicking on Sign In", putScreenshot());
+		attachScreenshots("Clicking on Sign In");
 		click("id", SignInOptionPageElements.signInButton_id);
 	}
 	
@@ -24,9 +19,9 @@ public class SignInOptionPageEvents extends Actions
 	 * Created By: Shreyas Devekar
 	 */
 	
-	public void clickOnCreateAccount() throws IOException
+	public void clickOnCreateAccount() 
 	{
-		ReportGeneration.logger.log(Status.INFO,"Clicking on Create Account", putScreenshot());
+		attachScreenshots("Clicking on Create Account");
 		click("id", SignInOptionPageElements.createAnAccountButton_id);
 	}
 	
@@ -34,10 +29,10 @@ public class SignInOptionPageEvents extends Actions
 	 * Created By: Shreyas Devekar
 	 */
 	
-	public void clickOnSkipSignIn() throws IOException, InterruptedException
+	public void clickOnSkipSignIn() 
 	{
-		Thread.sleep(2000);
-		ReportGeneration.logger.log(Status.INFO,"Clicking on Skip Sign In", putScreenshot());
+		waitForElementToBeVisible("id",SignInOptionPageElements.skipSignInButton_id);
+		attachScreenshots("Clicking on Skip Sign In");
 		click("id", SignInOptionPageElements.skipSignInButton_id);
 	}
 	
@@ -45,9 +40,9 @@ public class SignInOptionPageEvents extends Actions
 	 * Created By: Shreyas Devekar
 	 */
 	
-	public void switchToLocalLanguage() throws IOException
+	public void switchToLocalLanguage() 
 	{
-		ReportGeneration.logger.log(Status.INFO,"Clicking on Switch to local language", putScreenshot());
+		attachScreenshots("Clicking on Switch to local language");
 		click("id", SignInOptionPageElements.localLanguageSelectOption_id);
 	}
 

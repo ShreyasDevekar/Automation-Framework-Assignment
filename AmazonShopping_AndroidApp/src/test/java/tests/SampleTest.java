@@ -9,15 +9,16 @@ import pageEvents.HomePageEvents;
 import pageEvents.ProductPageEvents;
 import pageEvents.ProductSearchResultPageEvents;
 import pageEvents.SignInOptionPageEvents;
+import utils.ReportGeneration;
 
 public class SampleTest extends BaseTest
 {
 	/* Description: This test case validates that the selected product and product present in the cart are same or not.
 	 * Created By: Shreyas Devekar 
 	 */
-	
+	ReportGeneration report;
 	@Test
-	public void ValidatingCartProductDetails() throws InterruptedException, IOException
+	public void ValidatingCartProductDetails() throws IOException 
 	{
 		SignInOptionPageEvents signIn = new SignInOptionPageEvents();
 		signIn.clickOnSkipSignIn();

@@ -11,15 +11,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import utils.Actions;
 import utils.Constants;
 import utils.ReportGeneration;
-import utils.Utility;
 
-public class BaseTest extends Utility
+public class BaseTest extends Actions
 {
 	// Initializing Android driver,properties, and report utility object to generate reports
 	
@@ -31,6 +32,7 @@ public class BaseTest extends Utility
 	public static String  platformName;
 	public static String appActivity;
 	public static String appPackage;
+	public static String url;
 	
 	/* Description: This method loads all capabilities from capability.properties file.
 	 * Created By: Shreyas Devekar 
@@ -43,6 +45,7 @@ public class BaseTest extends Utility
 		platformName = prop.getProperty("platformName");
 		appActivity = prop.getProperty("appActivity");
 		appPackage = prop.getProperty("appPackage");
+		url = prop.getProperty("Url");
 	}
 	
 	/* Description: This method initializes android driver with android device capabilities

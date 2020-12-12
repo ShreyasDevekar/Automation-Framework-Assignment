@@ -4,17 +4,15 @@
   <listeners>
     <listener class-name="utils.SuiteListener"/>
   </listeners>
-  <test name="Test(failed)">
+  <test name="AmazonAppTest(failed)">
     <classes>
       <class name="tests.SampleTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="demoTest"/>
-          <include name="afterTestMethod"/>
+          <include name="ValidatingCartProductDetails"/>
           <include name="beforeTestMethod"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- tests.SampleTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- AmazonAppTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

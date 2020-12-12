@@ -2,42 +2,42 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="95109" started-at="2020-12-10T13:46:08Z" finished-at="2020-12-10T13:47:43Z">
+  <suite name="Suite" duration-ms="96583" started-at="2020-12-12T18:12:32Z" finished-at="2020-12-12T18:14:09Z">
     <groups>
     </groups>
-    <test name="AmazonAppTest" duration-ms="95109" started-at="2020-12-10T13:46:08Z" finished-at="2020-12-10T13:47:43Z">
+    <test name="AmazonAppTest" duration-ms="96583" started-at="2020-12-12T18:12:32Z" finished-at="2020-12-12T18:14:09Z">
       <class name="tests.SampleTest">
-        <test-method status="PASS" signature="beforeTestMethod()[pri:0, instance:tests.SampleTest@1ed4004b]" name="beforeTestMethod" is-config="true" duration-ms="303" started-at="2020-12-10T19:16:08Z" finished-at="2020-12-10T19:16:08Z">
+        <test-method status="PASS" signature="beforeTestMethod()[pri:0, instance:tests.SampleTest@25bbe1b6]" name="beforeTestMethod" is-config="true" duration-ms="274" started-at="2020-12-12T23:42:32Z" finished-at="2020-12-12T23:42:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@1ed4004b]" name="setUp" is-config="true" duration-ms="14890" started-at="2020-12-10T19:16:08Z" finished-at="2020-12-10T19:16:23Z">
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@25bbe1b6]" name="setUp" is-config="true" duration-ms="13840" started-at="2020-12-12T23:42:33Z" finished-at="2020-12-12T23:42:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.SampleTest.ValidatingCartProductDetails() throws java.lang.InterruptedException,java.io.IOException]]>
+                <![CDATA[public void tests.SampleTest.ValidatingCartProductDetails() throws java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="ValidatingCartProductDetails()[pri:0, instance:tests.SampleTest@1ed4004b]" name="ValidatingCartProductDetails" duration-ms="77214" started-at="2020-12-10T19:16:23Z" finished-at="2020-12-10T19:17:40Z">
+        <test-method status="PASS" signature="ValidatingCartProductDetails()[pri:0, instance:tests.SampleTest@25bbe1b6]" name="ValidatingCartProductDetails" duration-ms="79862" started-at="2020-12-12T23:42:46Z" finished-at="2020-12-12T23:44:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidatingCartProductDetails -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SampleTest@1ed4004b]" name="tearDown" is-config="true" duration-ms="2241" started-at="2020-12-10T19:17:40Z" finished-at="2020-12-10T19:17:42Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SampleTest@25bbe1b6]" name="tearDown" is-config="true" duration-ms="2152" started-at="2020-12-12T23:44:06Z" finished-at="2020-12-12T23:44:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=ValidatingCartProductDetails status=SUCCESS method=SampleTest.ValidatingCartProductDetails()[pri:0, instance:tests.SampleTest@1ed4004b] output={null}]]]>
+                <![CDATA[[TestResult name=ValidatingCartProductDetails status=SUCCESS method=SampleTest.ValidatingCartProductDetails()[pri:0, instance:tests.SampleTest@25bbe1b6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="afterTestMethod()[pri:0, instance:tests.SampleTest@1ed4004b]" name="afterTestMethod" is-config="true" duration-ms="449" started-at="2020-12-10T19:17:42Z" finished-at="2020-12-10T19:17:43Z">
+        <test-method status="PASS" signature="afterTestMethod()[pri:0, instance:tests.SampleTest@25bbe1b6]" name="afterTestMethod" is-config="true" duration-ms="434" started-at="2020-12-12T23:44:08Z" finished-at="2020-12-12T23:44:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->

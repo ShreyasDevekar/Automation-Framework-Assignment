@@ -1,18 +1,10 @@
 package utils;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import tests.BaseTest;
-
-public class SuiteListener extends  Utility implements ITestListener 
+public class SuiteListener implements ITestListener 
 {
 
 	public void onTestStart(ITestResult result) {

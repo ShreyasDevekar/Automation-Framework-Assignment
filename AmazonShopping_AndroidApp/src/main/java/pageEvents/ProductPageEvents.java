@@ -1,31 +1,21 @@
 package pageEvents;
 
-import java.io.IOException;
-
-import com.aventstack.extentreports.Status;
-
 import pageObjects.ProductPageElements;
 import utils.Actions;
-import utils.ReportGeneration;
-import utils.Utility;
 
 public class ProductPageEvents extends Actions
 {
-	// Creation of Utility object to use utilities.
-	
-	Utility utils = new Utility();
-
 	/* Description: This method returns selected product details.
 	 * Created By: Shreyas Devekar 
 	 */
 	
-	public String getProductDetails() throws InterruptedException, IOException
+	public String getProductDetails() 
 	{
-		Thread.sleep(2000);
+		waitForElementToBeVisible("xpath", ProductPageElements.productDescription);
 		//clickBackButton();
-		ReportGeneration.logger.log(Status.INFO,"Fetching product details", putScreenshot());
+		attachScreenshots("Fetching product details");
 		String description = getElementText("xpath",ProductPageElements.productDescription);
-		ReportGeneration.logger.log(Status.INFO,"Product Details fetch successfully", putScreenshot());
+		attachScreenshots("Product Details fetch successfully");
 		return description;
 	}
 	
@@ -33,20 +23,19 @@ public class ProductPageEvents extends Actions
 	 * Created By: Shreyas Devekar
 	 */
 	
-	public void addToCart() throws IOException
+	public void addToCart() 
 	{
 		scrollAndClick("xpath", ProductPageElements.addToCartButton);
-		ReportGeneration.logger.log(Status.INFO,"Adding product into the cart", putScreenshot());
+		attachScreenshots("Adding product into the cart");
 	}
 	
 	/* Description: This method navigates to cart.
 	 * Created By: Shreyas Devekar
 	 */
 	
-	public void goToCart() throws InterruptedException, IOException
+	public void goToCart() 
 	{
-		Thread.sleep(3000);
-		ReportGeneration.logger.log(Status.INFO,"Navigating to cart", putScreenshot());
+		attachScreenshots("Navigating to cart");
 		clickBackButton();
 		click("xpath", ProductPageElements.goToCartButton);
 	}
